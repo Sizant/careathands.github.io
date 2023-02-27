@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/appointment.css">
+    <style>
+        h1{
+            margin-top: 20px;
+        }
+    </style>
+    <title>Book An Appointment</title>
+
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="sendEmail(); reset(); return false;">
+            <h1>Get in Touch with us!</h1>
+            <input type="text" id="name" placeholder="Enter Your Name" required>
+            <label for="gender">Gender:</label>
+            <select name="gender" id="gender" >
+            <option disabled selected value> -- select an option -- </option>
+              <option value="Male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Prefer not to mention</option>
+            </select>
+            <input type="email" id="email" placeholder="Enter Your Email Address" >
+            <input type="text" id="phone" placeholder="Enter Your Phone Number" required>
+            <label for="appt-time">Choose an appointment time: </label>
+            <input id="appt-time" type="time" name="appt-time" min="08:00" max="20:00" >
+            <!-- <input type="text" id="sid" placeholder="select doctor" required>
+             -->
+             <select name="weekday" id="day">
+                 <option disabled selected value> --Select Day --</option>
+                 <option value="Monday">Monday</option>
+                 <option value="Tuesday">Tuesday</option>
+                 <option value="Wednesday">Wednesday</option>
+                 <option value="Thursday">Thursday</option>
+                 <option value="Friday">Friday</option>
+                 <option value="Saturday">Saturday</option>
+                 <option value="Sunday">Sunday</option>
+             </select>
+                <textarea id="message" rows="4" placeholder="Enter a Message"></textarea>
+            <button type="submit">Send</button>    
+        </form>
+    
+    </div>
+
+    
+
+
+   
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "khajuriasiddhant@gmail.com",
+    Password : "08CF02D885D7B12D9CA607A8613CCCCC6DAD",
+    To : document.getElementById("email").value,
+    From : "khajuriasiddhant@gmail.com",
+    Subject : "Appointment Acknowledgement ",
+    Body : "Dear "+ document.getElementById("name").value +"<br> Your appointment for "+document.getElementById("day").value +" at "
+    + document.getElementById("appt-time").value +" has been received by us. Please wait for confirmation from the doctor. <br>Regards<br> Care@hands"
+}).then(
+  message => alert(message)
+);
+        }
+    </script>
+</body>
+</html>
