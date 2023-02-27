@@ -41,8 +41,16 @@
                  <option value="Saturday">Saturday</option>
                  <option value="Sunday">Sunday</option>
              </select>
+            <select name="doctor" id="sid" >
+                <option disabled selected value> -- Select Doctor -- </option>
+                  <option value="1">Dr Rohan</option>
+                  <option value="2">Dr Rohit</option>
+                  <option value="3">Dr Sunanina</option>
+                  <option value="4">Dr Anjali</option>
+                </select>
+                
                 <textarea id="message" rows="4" placeholder="Enter a Message"></textarea>
-            <button type="submit">Send</button>    
+            <button type="submit" onclick="saveData()">Send</button>    
         </form>
     
     </div>
@@ -50,7 +58,7 @@
     
 
 
-   
+    <script src="./js/login.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
         function sendEmail(){

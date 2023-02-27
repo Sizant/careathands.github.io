@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <style>
+      #redirect {
+        margin-top: 300px;
+        margin-left: 400px;
+        width: 50%;
+  height: 100px;
+  border: 1px solid;
+  background: #2691d9;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+      }
+      </style>
+    <title>Login to your Profile</title>
+    <link rel="stylesheet" href="./css/loginstyle.css">
+  </head>
+  <body>
+    <div class="center" id="log">
+      <h1>Login</h1>
+      <form method="post">
+        <div class="txt_field">
+          <input type="text" id="username" required>
+          <span></span>
+          <label>Username</label>
+        </div>
+        <div class="txt_field">
+          <input type="password" id="password"  required>
+          <span></span>
+          <label>Password</label>
+        </div>
+        <div class="pass">Forgot Password?</div>
+        <input type="button" value="login" onclick="validate()">
+        <div class="signup_link">
+          Not a member? <a href="register.html">Signup</a>
+        </div>
+      </form>
+    </div>
+
+    <button type="button" id="redirect" style="display:none ;" onclick="redirect();">Go to dashboard</button>
+    
+  </body>
+  <script src="./js/validate.js"></script>
+</html>
